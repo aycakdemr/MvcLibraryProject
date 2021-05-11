@@ -1,0 +1,32 @@
+﻿@using Entities.Concrete
+@model List<Writer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Yazarlar</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Detay</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.WriterName</td>
+            <td>@item.WriterLastName</td>
+            <td>@item.Detail</td>
+            <td>@Html.ActionLink("Sil", "DeleteWriter", new { id = item.Id }, new { @class = "btn btn-danger" , onClick = "return confirm('Silmek İstiyor Musunuz?')" })</td>
+            <td><a href="/Writer/GetWriter/@item.Id" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Writer/AddWriter" class="btn btn-primary">Yeni yazar ekle</a>

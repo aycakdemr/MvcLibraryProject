@@ -51,9 +51,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IBasketDal.cs" />
     <Compile Include="Abstract\IBookDal.cs" />
+    <Compile Include="Abstract\IBookRecordDal.cs" />
+    <Compile Include="Abstract\ICategoryDal.cs" />
+    <Compile Include="Abstract\ILateFeeDal.cs" />
+    <Compile Include="Abstract\IMemberDal.cs" />
+    <Compile Include="Abstract\IStaffDal.cs" />
+    <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
+    <Compile Include="Concrete\EfBasketDal.cs" />
     <Compile Include="Concrete\EfBookDal.cs" />
+    <Compile Include="Concrete\EfBookRecordDal.cs" />
+    <Compile Include="Concrete\EfCategoryDal.cs" />
+    <Compile Include="Concrete\EfLateFeeDal.cs" />
+    <Compile Include="Concrete\EfMemberDal.cs" />
+    <Compile Include="Concrete\EfStaffDal.cs" />
+    <Compile Include="Concrete\EfWriterDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
