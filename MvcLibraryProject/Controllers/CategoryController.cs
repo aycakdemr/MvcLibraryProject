@@ -13,7 +13,12 @@ namespace MvcLibraryProject.Controllers
     public class CategoryController : Controller
     {
         // GET: Category
-        CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+        ICategoryService categoryManager;
+
+        public CategoryController(ICategoryService categoryManager)
+        {
+            this.categoryManager = categoryManager;
+        }
 
         public ActionResult Index()
         {

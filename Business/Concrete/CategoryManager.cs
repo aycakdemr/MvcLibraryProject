@@ -31,6 +31,11 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
+        public Category Get(int id)
+        {
+            return _categoryDal.Get(c => c.Id == id);
+        }
+
         public List<Category> GetAll()
         {
             return _categoryDal.GetAll();

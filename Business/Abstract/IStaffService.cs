@@ -8,13 +8,12 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface ICategoryService
+    public interface IStaffService
     {
-        IResult Add(Category category);
+        IResult Add(Staff staff);
         IResult Delete(int id);
-        void Update(Category category);
-        List<Category> GetAll();
-        Category GetById(int id);
-        Category Get(int id);
+        void Update(Staff staff);
+        List<Staff> GetAll();
+        Staff GetById(int id);
     }
 }

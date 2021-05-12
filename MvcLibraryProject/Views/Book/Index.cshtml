@@ -1,0 +1,49 @@
+﻿@using Entities.Dto
+@model List<BookWriterCategoryDto>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Kitap Sayfası</h2>
+
+@using (Html.BeginForm("Index", "Book", FormMethod.Post))
+{
+    <div style="margin-bottom:15px;margin-top:15px">
+        <b>Aranacak Kitap Adını Girin:</b> @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </div>
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Kitap Adı</th>
+        <th>Kitap Yazarı</th>
+        <th>Kategorisi</th>
+        <th>Basım Yılı</th>
+        <th>YayınEvi</th>
+        <th>Sayfa Sayısı</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.BookName</td>
+            <td>@item.WriterName&nbsp;@item.WriterLastName</td>
+            <td>@item.CategoryName</td>
+            <td>@item.ReleaseYear</td>
+            <td>@item.Publisher</td>
+            <td>@item.NumberOfPages</td>
+            <td>@item.Status</td>
+            <td><a href="/Book/DeleteBook/@item.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Book/GetBook/@item.Id" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Book/AddBook" class="btn btn-primary">Yeni Kitap Ekle</a>

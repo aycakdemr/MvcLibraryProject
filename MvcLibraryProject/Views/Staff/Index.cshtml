@@ -1,0 +1,30 @@
+﻿@using Entities.Concrete
+@model List<Staff>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Personeller</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Personel Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.StaffName</td>
+            <td><a href="/Staff/DeleteStaff/@item.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Staff/GetStaff/@item.Id" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+    }
+
+</table>
+<a href="/Staff/AddStaff/" class="btn btn-primary">Yeni Personel Ekle</a>

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IDto.cs" />
     <Compile Include="Abstract\IEntity.cs" />
     <Compile Include="Concrete\Basket.cs" />
     <Compile Include="Concrete\Book.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Concrete\Member.cs" />
     <Compile Include="Concrete\Staff.cs" />
     <Compile Include="Concrete\Writer.cs" />
+    <Compile Include="Dto\BookWriterCategoryDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

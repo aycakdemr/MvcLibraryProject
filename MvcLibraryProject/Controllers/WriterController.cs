@@ -1,4 +1,5 @@
-﻿using Business.Concrete;
+﻿using Business.Abstract;
+using Business.Concrete;
 using DataAccess.Concrete;
 using Entities.Concrete;
 using System;
@@ -11,7 +12,13 @@ namespace MvcLibraryProject.Controllers
 {
     public class WriterController : Controller
     {
-        WriterManager writerManager = new WriterManager(new EfWriterDal());
+        IWriterService writerManager;
+
+        public WriterController(IWriterService writerManager)
+        {
+            this.writerManager = writerManager;
+        }
+
         // GET: Writers
         public ActionResult Index()
         {

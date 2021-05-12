@@ -1,0 +1,19 @@
+﻿@model Entities.Concrete.Staff
+@{
+    ViewBag.Title = "AddStaff";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>AddStaff</h2>
+
+<form class="form-group" method="post">
+    <div style="margin-top:15px">
+        <label>Personel Adı</label>
+        @Html.TextBoxFor(x => x.StaffName, new {@class="form-control" })
+        @Html.ValidationMessageFor(x => x.StaffName,"",new {@style ="color:red" });
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="btn1"> Personel Ekle</button>
+
+    </div>
+</form>

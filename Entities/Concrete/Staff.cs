@@ -12,6 +12,7 @@ namespace Entities.Concrete
     {
         [Key]
         public int Id { get; set; }
+        [Required(ErrorMessage ="Personel adı boş geçilemez")]
         public string StaffName { get; set; }
         public ICollection<BookRecord> BookRecords { get; set; }
     }
