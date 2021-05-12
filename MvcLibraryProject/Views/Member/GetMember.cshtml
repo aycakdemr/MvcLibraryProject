@@ -1,0 +1,40 @@
+﻿@model Entities.Concrete.Member
+
+@{
+    ViewBag.Title = "GetMember";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>GetMember</h2>
+
+
+@using (Html.BeginForm("UpdateMember", "Member", FormMethod.Post))
+{
+<div class="form-group">
+    <div style="margin:20px"></div>
+    <label>Üye Id</label>
+    @Html.TextBoxFor(y => y.Id, new { @class = "form-control" })
+    <br />
+    <label>Üye Adı</label>
+    @Html.TextBoxFor(y => y.Name, new { @class = "form-control" })
+    <br />
+    <label>MAil Adresi</label>
+    @Html.TextBoxFor(y => y.EMail, new { @class = "form-control" })
+    <br />
+    <label>Kullanıcı Adı</label>
+    @Html.TextBoxFor(y => y.UserName, new { @class = "form-control" })
+    <br />
+    <label>Şifre</label>
+    @Html.TextBoxFor(y => y.Password, new { @class = "form-control" })
+    <br />
+    <label>Telefon</label>
+    @Html.TextBoxFor(y => y.PhoneNumber, new { @class = "form-control" })
+    <br />
+    <label>Okul</label>
+    @Html.TextBoxFor(y => y.Education, new { @class = "form-control" })
+    <br />
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+</div>
+}

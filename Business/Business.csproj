@@ -109,10 +109,12 @@
   <ItemGroup>
     <Compile Include="Abstract\IBookService.cs" />
     <Compile Include="Abstract\ICategoryService.cs" />
+    <Compile Include="Abstract\IMemberService.cs" />
     <Compile Include="Abstract\IStaffService.cs" />
     <Compile Include="Abstract\IWriterService.cs" />
     <Compile Include="Concrete\BookManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
+    <Compile Include="Concrete\MemberManager.cs" />
     <Compile Include="Concrete\StaffManager.cs" />
     <Compile Include="Concrete\WriterManager.cs" />
     <Compile Include="DependencyResolvers\Ninject\NinjectBindingModule.cs" />
