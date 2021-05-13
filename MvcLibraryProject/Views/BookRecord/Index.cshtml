@@ -1,0 +1,32 @@
+﻿@using Entities.Dto
+@model List<BookRecordDto>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Ödünç Kitap Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th> İşlem Id</th>
+        <th>Kitap Adı</th>
+        <th>Üye</th>
+        <th>Personel</th>
+        <th>Alış Tarihi</th>
+        <th>İade Tarihi</th>
+        <th>İade Al</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.BookName</td>
+            <td>@item.MemberName&nbsp;@item.MemberLastName</td>
+            <td>@item.StaffName</td>
+            <td>@Convert.ToDateTime(@item.BuyingDate).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(@item.GivingDate).ToString("dd/MM/yyyy")</td>
+            <td><a href="/BookRecord/DeleteBook/@item.Id" class="btn btn-default" style="background-color:#c68520">Kitabı İade Et</a></td>
+        </tr>
+    }
+</table>

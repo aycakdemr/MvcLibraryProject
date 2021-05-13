@@ -52,6 +52,7 @@
     <Compile Include="Concrete\Member.cs" />
     <Compile Include="Concrete\Staff.cs" />
     <Compile Include="Concrete\Writer.cs" />
+    <Compile Include="Dto\BookRecordDto.cs" />
     <Compile Include="Dto\BookWriterCategoryDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
