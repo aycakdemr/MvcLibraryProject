@@ -44,16 +44,19 @@
   <ItemGroup>
     <Compile Include="Abstract\IDto.cs" />
     <Compile Include="Abstract\IEntity.cs" />
+    <Compile Include="Concrete\About.cs" />
     <Compile Include="Concrete\Basket.cs" />
     <Compile Include="Concrete\Book.cs" />
     <Compile Include="Concrete\BookRecord.cs" />
     <Compile Include="Concrete\Category.cs" />
+    <Compile Include="Concrete\Contact.cs" />
     <Compile Include="Concrete\LateFee.cs" />
     <Compile Include="Concrete\Member.cs" />
     <Compile Include="Concrete\Staff.cs" />
     <Compile Include="Concrete\Writer.cs" />
     <Compile Include="Dto\BookRecordDto.cs" />
     <Compile Include="Dto\BookWriterCategoryDto.cs" />
+    <Compile Include="Dto\MainPageDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

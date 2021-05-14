@@ -18,5 +18,7 @@ namespace Entities.Concrete
         public virtual Staff Staff { get; set; }
         public DateTime BuyingDate { get; set; }
         public DateTime GivingDate { get; set; }
+        public DateTime MemberGivingDate { get; set; }
+        public bool RecordStatus { get; set; }
     }
 }

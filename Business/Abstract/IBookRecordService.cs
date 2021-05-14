@@ -16,6 +16,7 @@ namespace Business.Abstract
         void Update(BookRecord bookRecord);
         List<BookRecord> GetAll();
         BookRecord GetById(int id);
-        List<BookRecordDto> GetDetails();
+        List<BookRecordDto> GetDetailStatusFalse();
+        List<BookRecordDto> GetDetailStatusTrue();
     }
 }

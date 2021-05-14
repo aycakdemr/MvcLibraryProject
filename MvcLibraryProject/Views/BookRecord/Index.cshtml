@@ -26,7 +26,7 @@
             <td>@item.StaffName</td>
             <td>@Convert.ToDateTime(@item.BuyingDate).ToString("dd/MM/yyyy")</td>
             <td>@Convert.ToDateTime(@item.GivingDate).ToString("dd/MM/yyyy")</td>
-            <td><a href="/BookRecord/DeleteBook/@item.Id" class="btn btn-default" style="background-color:#c68520">Kitabı İade Et</a></td>
+            <td><a href="/BookRecord/GetBookRecord/@item.Id" class="btn btn-default" style="background-color:#c68520">Kitabı İade Et</a></td>
         </tr>
     }
 </table>

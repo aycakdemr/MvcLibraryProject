@@ -10,7 +10,7 @@
     <form class="form-group" method="post">
         <div style="margin-top:15px">
             <label>Üye Id</label>
-            @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+            @Html.TextBoxFor(x => x.MemberId, new { @class = "form-control" })
         </div>
         <div style="margin-top:15px">
             <label>Kitap Id</label>
@@ -30,6 +30,6 @@
         </div>
         <div style="margin-top:15px">
             <button class="btn btn-info" id="btn1"> Kitabı Ödünç Ver</button>
-
+            <input type="hidden" value="False" name="RecordStatus" />
         </div>
     </form>

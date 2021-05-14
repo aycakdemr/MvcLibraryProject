@@ -21,6 +21,7 @@ namespace Entities.Concrete
         public String Publisher { get; set; }
         public String NumberOfPages { get; set; }
         public bool Status { get; set; }
+        public String ImagePath { get; set; }
 
         public ICollection<BookRecord> BookRecords { get; set; }
     }

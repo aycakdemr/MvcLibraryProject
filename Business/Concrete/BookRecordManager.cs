@@ -35,7 +35,7 @@ namespace Business.Concrete
 
         public List<BookRecord> GetAll()
         {
-            return _bookRecordDal.GetAll();
+            return _bookRecordDal.GetAll(x=>x.RecordStatus ==false);
         }
 
         public BookRecord GetById(int id)
@@ -43,13 +43,25 @@ namespace Business.Concrete
             return _bookRecordDal.Get(x => x.Id == id);
         }
 
-        public List<BookRecordDto> GetDetails()
+        public BookRecordDto GetDetailById(int id)
         {
-            return _bookRecordDal.GetBookRecordsDetails();
+            return _bookRecordDal.GetBookRecordsDetailsById(x=>x.Id ==id);
+        }
+
+
+        public List<BookRecordDto> GetDetailStatusFalse()
+        {
+           return _bookRecordDal.GetBookRecordsDetails(x => x.RecordStatus == false);
+        }
+
+        public List<BookRecordDto> GetDetailStatusTrue()
+        {
+            return _bookRecordDal.GetBookRecordsDetails(x => x.RecordStatus == true);
         }
 
         public void Update(BookRecord bookRecord)
         {
+            bookRecord.RecordStatus = true;
             _bookRecordDal.Update(bookRecord);
         }
     }

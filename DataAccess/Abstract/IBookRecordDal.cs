@@ -13,5 +13,6 @@ namespace DataAccess.Abstract
    public interface IBookRecordDal : IEntityRepository<BookRecord>
     {
         List<BookRecordDto> GetBookRecordsDetails(Expression<Func<BookRecord, bool>> filter = null);
+        BookRecordDto GetBookRecordsDetailsById(Expression<Func<BookRecord, bool>> filter = null);
     }
 }

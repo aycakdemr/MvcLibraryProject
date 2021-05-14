@@ -26,6 +26,10 @@ namespace Business.DependencyResolvers.Ninject
             Kernel.Bind<IMemberDal>().To<EfMemberDal>().InSingletonScope();
             Kernel.Bind<IBookRecordService>().To<BookRecordManager>().InSingletonScope();
             Kernel.Bind<IBookRecordDal>().To<EfBookRecordDal>().InSingletonScope();
+            Kernel.Bind<IAboutService>().To<AboutManager>().InSingletonScope();
+            Kernel.Bind<IAboutDal>().To<EfAboutDal>().InSingletonScope();
+            Kernel.Bind<IContactService>().To<ContactManager>().InSingletonScope();
+            Kernel.Bind<IContactDal>().To<EfContactDal>().InSingletonScope();
         }
     }
 }

@@ -17,6 +17,8 @@ namespace DataAccess.Concrete
         public DbSet<LateFee> LateFees { get; set; }
         public DbSet<Member> Members { get; set; }
         public DbSet<Staff> Staffs { get; set; }
+        public DbSet<About> Abouts { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
         public DbSet<Writer> Writer { get; set; }
     }
 }

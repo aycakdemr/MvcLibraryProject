@@ -1,0 +1,38 @@
+﻿@model Entities.Concrete.BookRecord
+@{
+    ViewBag.Title = "GetBookRecord";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>GetBookRecord</h2>
+
+@using (Html.BeginForm("UpdateBookRecord", "BookRecord", FormMethod.Post)) { 
+
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        <label>Kayıt Id</label>
+        @Html.TextBoxFor(c => c.Id, new { @class = "form-control" })
+        <br />
+        <label>Kitap Adı</label>
+        @Html.DropDownListFor(x => x.BookId, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+        <br />
+        <label>Üye Adı</label>
+        @Html.DropDownListFor(x => x.MemberId, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+        <br />
+        <label>Personel Adı</label>
+        @Html.DropDownListFor(x => x.StaffId, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+        <br />
+        <label>Alış Tarihi</label>
+        @Html.TextBoxFor(c => c.BuyingDate, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>İade Tarihi</label>
+        @Html.TextBoxFor(c => c.GivingDate, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Üyenin Getirdiği Tarih</label>
+        <input type="text" class="form-control" name="MemberGivingDate" value="@DateTime.Now.ToShortDateString()" />
+        <br />
+    </div>
+    <div>
+        <button class="btn btn-info" id="btn1">Ödünç Kitabı Geri Al</button>
+    </div>
+}

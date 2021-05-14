@@ -107,15 +107,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAboutService.cs" />
     <Compile Include="Abstract\IBookRecordService.cs" />
     <Compile Include="Abstract\IBookService.cs" />
     <Compile Include="Abstract\ICategoryService.cs" />
+    <Compile Include="Abstract\IContactService.cs" />
     <Compile Include="Abstract\IMemberService.cs" />
     <Compile Include="Abstract\IStaffService.cs" />
     <Compile Include="Abstract\IWriterService.cs" />
+    <Compile Include="Concrete\AboutManager.cs" />
     <Compile Include="Concrete\BookManager.cs" />
     <Compile Include="Concrete\BookRecordManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
+    <Compile Include="Concrete\ContactManager.cs" />
     <Compile Include="Concrete\MemberManager.cs" />
     <Compile Include="Concrete\StaffManager.cs" />
     <Compile Include="Concrete\WriterManager.cs" />
