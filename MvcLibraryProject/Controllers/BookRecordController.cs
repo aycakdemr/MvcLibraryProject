@@ -74,6 +74,11 @@ namespace MvcLibraryProject.Controllers
                                                Value = i.Id.ToString()
                                            }).ToList();
             ViewBag.dgr3 = deger3;
+            DateTime d1 = DateTime.Parse(value.GivingDate.ToString());
+            DateTime d2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            TimeSpan d3 = d2 - d1;
+            ViewBag.dgr4 = d3.TotalDays;
+
             return View("GetBookRecord", value);
         }
         public ActionResult UpdateBookRecord(BookRecord bookRecord)

@@ -1,12 +1,16 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Castle.DynamicProxy;
+using Core.Utilities.Interceptors;
 using DataAccess.Abstract;
 using DataAccess.Concrete;
+using Ninject;
 using Ninject.Modules;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Core.Extensions;
 
 namespace Business.DependencyResolvers.Ninject
 {
@@ -14,6 +18,7 @@ namespace Business.DependencyResolvers.Ninject
     {
         public override void Load()
         {
+            IKernel kernel = new StandardKernel();
             Kernel.Bind<ICategoryService>().To<CategoryManager>().InSingletonScope();
             Kernel.Bind<ICategoryDal>().To<EfCategoryDal>().InSingletonScope();
             Kernel.Bind<IWriterService>().To<WriterManager>().InSingletonScope();
@@ -30,6 +35,7 @@ namespace Business.DependencyResolvers.Ninject
             Kernel.Bind<IAboutDal>().To<EfAboutDal>().InSingletonScope();
             Kernel.Bind<IContactService>().To<ContactManager>().InSingletonScope();
             Kernel.Bind<IContactDal>().To<EfContactDal>().InSingletonScope();
+
         }
     }
 }

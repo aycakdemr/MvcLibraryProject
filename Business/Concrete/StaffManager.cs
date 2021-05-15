@@ -24,8 +24,11 @@ namespace Business.Concrete
         [ValidationAspect(typeof(StaffValidator))]
         public IResult Add(Staff staff)
         {
-            _staffDal.Add(staff);
-            return new SuccessResult();
+           
+                _staffDal.Add(staff);
+                return new SuccessResult();
+      
+            
         }
 
         public IResult Delete(int id)

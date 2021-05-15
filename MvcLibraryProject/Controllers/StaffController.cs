@@ -31,10 +31,7 @@ namespace MvcLibraryProject.Controllers
         [HttpPost]
         public ActionResult AddStaff(Staff staff)
         {
-            if (!ModelState.IsValid)
-            {
-                return View("AddStaff");
-            }
+            
             _staffManager.Add(staff);
             return View();
         }
