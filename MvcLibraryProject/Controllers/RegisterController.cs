@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
+using Entities.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,21 +12,23 @@ namespace MvcLibraryProject.Controllers
     public class RegisterController : Controller
     {
         // GET: Register
-        IMemberService memberManager;
 
-        public RegisterController(IMemberService memberManager)
+        IAuthService authService;
+
+        public RegisterController(IAuthService authService)
         {
-            this.memberManager = memberManager;
+            this.authService = authService;
         }
+
         [HttpGet]
         public ActionResult Register()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Register(Member member)
+        public ActionResult Register(MemberForRegisterDto member)
         {
-            memberManager.Add(member);
+            authService.Register(member,member.Password);
             return View();
         }
     }

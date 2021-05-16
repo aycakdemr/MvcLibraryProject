@@ -15,5 +15,6 @@ namespace Business.Abstract
         void Update(Member member);
         List<Member> GetAll();
         Member GetById(int id);
+        Member GetByMail(string mail);
     }
 }

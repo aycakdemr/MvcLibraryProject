@@ -57,6 +57,8 @@
     <Compile Include="Dto\BookRecordDto.cs" />
     <Compile Include="Dto\BookWriterCategoryDto.cs" />
     <Compile Include="Dto\MainPageDto.cs" />
+    <Compile Include="Dto\MemberForLoginDto.cs" />
+    <Compile Include="Dto\MemberForRegisterDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

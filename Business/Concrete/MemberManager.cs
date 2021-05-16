@@ -41,6 +41,11 @@ namespace Business.Concrete
             return _memberDal.Get(x => x.Id == id);
         }
 
+        public Member GetByMail(string mail)
+        {
+            return _memberDal.Get(x => x.EMail == mail);
+        }
+
         public void Update(Member member)
         {
             _memberDal.Update(member);

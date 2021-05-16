@@ -1,4 +1,4 @@
-﻿
+﻿@model Entities.Dto.MemberForLoginDto
 @{
     Layout = null;
 }
@@ -38,13 +38,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <h1>Mvc5 Kütüphane Giriş Paneli</h1>
     <div class=" w3l-login-form">
         <h2>Login Here</h2>
-        <form action="#" method="POST">
+        <form action="/MyPage/Index" method="POST">
 
             <div class=" w3l-form-group">
                 <label>Username:</label>
                 <div class="group">
                     <i class="fas fa-user"></i>
-                    <input type="text" class="form-control" placeholder="Username" required="required" />
+                    <input type="text" class="form-control" placeholder="EMail" required="required" />
                 </div>
             </div>
             <div class=" w3l-form-group">
