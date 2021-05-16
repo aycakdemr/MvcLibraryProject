@@ -24,7 +24,6 @@ namespace Business.Concrete
             _writerDal.Add(writer);
             return new SuccessResult();
         }
-
         public IResult Delete(int id)
         {
             var value = _writerDal.Get(x => x.Id == id);
@@ -46,5 +45,6 @@ namespace Business.Concrete
         {
             _writerDal.Update(writer);
         }
+
     }
 }

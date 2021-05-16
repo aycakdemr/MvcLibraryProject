@@ -35,6 +35,8 @@ namespace Business.DependencyResolvers.Ninject
             Kernel.Bind<IAboutDal>().To<EfAboutDal>().InSingletonScope();
             Kernel.Bind<IContactService>().To<ContactManager>().InSingletonScope();
             Kernel.Bind<IContactDal>().To<EfContactDal>().InSingletonScope();
+            Kernel.Bind<ILateFeeService>().To<LateFeeManager>().InSingletonScope();
+            Kernel.Bind<ILateFeeDal>().To<EfLateFeeDal>().InSingletonScope();
 
         }
     }

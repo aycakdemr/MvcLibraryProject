@@ -26,6 +26,12 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
+        public String BestPublishing()
+        {
+            return _bookDal.GetAll().GroupBy(x => x.Publisher).OrderByDescending(z => z.Count()).Select(y => new
+            {y.Key}).FirstOrDefault().ToString();
+        }
+
         public IResult Delete(int id)
         {
             var value = _bookDal.Get(x => x.Id == id);
@@ -40,7 +46,12 @@ namespace Business.Concrete
 
         public Book GetById(int id)
         {
-            return _bookDal.Get(x=>x.Id ==id);
+            return _bookDal.Get(x => x.Id == id);
+        }
+
+        public List<Book> GetByStatusFalse()
+        {
+            return _bookDal.GetAll(x => x.Status == false);
         }
 
         public List<BookWriterCategoryDto> GetDetails()
@@ -56,7 +67,7 @@ namespace Business.Concrete
         public void Update(Book book)
         {
             _bookDal.Update(book);
-            
+
         }
     }
 }
