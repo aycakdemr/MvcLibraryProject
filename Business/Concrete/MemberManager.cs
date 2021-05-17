@@ -1,7 +1,9 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Results;
+using Core.Utilities.Security.Hashing;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,10 +47,25 @@ namespace Business.Concrete
         {
             return _memberDal.Get(x => x.EMail == mail);
         }
+        public MemberForRegisterDto GetMemberDto(string mail,string password)
+        {
+            var value = GetByMail(mail);
+            MemberForRegisterDto dto = new MemberForRegisterDto();
+            dto.FirstName = value.Name;
+            dto.LastName = value.LastName;
+            dto.UserName = value.UserName;
+            dto.Education = value.Education;
+            dto.Email = value.EMail;
+            dto.Password = password;
+            dto.Image = value.Image;
+            return dto;
+        }
+ 
 
         public void Update(Member member)
         {
             _memberDal.Update(member);
         }
+        
     }
 }

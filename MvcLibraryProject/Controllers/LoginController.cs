@@ -5,16 +5,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace MvcLibraryProject.Controllers
 {
     public class LoginController : Controller
     {
         IAuthService authService;
-
-        public LoginController(IAuthService authService)
+        IMemberService memberService;
+        public LoginController(IAuthService authService,IMemberService memberService)
         {
             this.authService = authService;
+            this.memberService = memberService;
         }
 
         // GET: Login
@@ -26,8 +28,17 @@ namespace MvcLibraryProject.Controllers
         [HttpPost]
         public ActionResult Login(MemberForLoginDto member)
         {
-            authService.Login(member);
-            return RedirectToRoute("/MyPage/Index");
+           
+            if ((authService.Login(member)))
+            {
+                
+                FormsAuthentication.SetAuthCookie(member.Email, false);
+                var value = memberService.GetByMail(member.Email);
+                Session["Mail"] = member.Email;
+                Session["Password"] = member.Password;
+                return RedirectToAction("Index", "MyPage");
+            }
+            return View();
         }
     }
 }

@@ -20,20 +20,20 @@ namespace Business.Concrete
             _memberService = memberService;
         }
 
-        public IDataResult<Member> Login(MemberForLoginDto userForLoginDto)
+        public bool Login(MemberForLoginDto userForLoginDto)
         {
             var userToCheck = _memberService.GetByMail(userForLoginDto.Email);
             if (userToCheck == null)
             {
-                return new ErrorDataResult<Member>();
+                return false;
             }
 
             if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
             {
-                return new ErrorDataResult<Member>();
+                return false;
             }
 
-            return new SuccessDataResult<Member>(userToCheck);
+            return true;
         }
 
         public IDataResult<Member> Register(MemberForRegisterDto userForRegisterDto, string password)

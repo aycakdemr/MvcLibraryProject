@@ -38,20 +38,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <h1>Mvc5 Kütüphane Giriş Paneli</h1>
     <div class=" w3l-login-form">
         <h2>Login Here</h2>
-        <form action="/MyPage/Index" method="POST">
+        @using (Html.BeginForm("Login", "Login", FormMethod.Post)) {
 
             <div class=" w3l-form-group">
                 <label>Username:</label>
                 <div class="group">
                     <i class="fas fa-user"></i>
-                    <input type="text" class="form-control" placeholder="EMail" required="required" />
+                    <input type="text" name="EMail" class="form-control" placeholder="EMail" required="required" />
                 </div>
             </div>
             <div class=" w3l-form-group">
                 <label>Password:</label>
                 <div class="group">
                     <i class="fas fa-unlock"></i>
-                    <input type="password" class="form-control" placeholder="Password" required="required" />
+                    <input type="password" name="Password" class="form-control" placeholder="Password" required="required" />
                 </div>
             </div>
             <div class="forgot">
@@ -59,7 +59,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <p><input type="checkbox">Remember Me</p>
             </div>
             <button type="submit">Login</button>
-        </form>
+        }
         <p class=" w3l-register-p">Don't have an account?<a href="/Register/Register" class="register"> Register</a></p>
     </div>
     <footer>

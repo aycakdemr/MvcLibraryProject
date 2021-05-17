@@ -1,8 +1,39 @@
-﻿
+﻿@model Entities.Dto.MemberForRegisterDto
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MyLayout.cshtml";
 }
 
-<h2>Index</h2>
-
+<h2>Kütüphane Üye Profil Bilgileri</h2>
+@using (Html.BeginForm("Index2", "MyPage", FormMethod.Post))
+{
+<table class="table table-bordered table-hover" style="margin-top:30px">
+    <tr>
+        <td>
+            <label style="font-weight:bolder"> Mail Adresi:</label>
+            @HttpContext.Current.User.Identity.Name
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(x => x.Password, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(x => x.Image, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(x => x.Education, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td><button class="btn btn-warning">Şifre Güncelle</button></td>
+    </tr>
+</table>
+}
