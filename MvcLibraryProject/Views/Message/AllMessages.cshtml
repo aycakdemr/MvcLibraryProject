@@ -1,0 +1,27 @@
+﻿@using Entities.Concrete
+@model List<Message>
+@{
+    ViewBag.Title = "AllMessages";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Giden Mesajlar Sayfası</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Alıcı</th>
+        <th>Konu</th>
+        <th>Mesaj</th>
+        <th>İşlem</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Receiver</td>
+            <td>@item.Topic</td>
+            <td>@item.Detail</td>
+            <td>@item.Date</td>
+        </tr>
+    }
+</table>
+

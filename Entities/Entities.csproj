@@ -52,6 +52,7 @@
     <Compile Include="Concrete\Contact.cs" />
     <Compile Include="Concrete\LateFee.cs" />
     <Compile Include="Concrete\Member.cs" />
+    <Compile Include="Concrete\Message.cs" />
     <Compile Include="Concrete\Staff.cs" />
     <Compile Include="Concrete\Writer.cs" />
     <Compile Include="Dto\BookRecordDto.cs" />

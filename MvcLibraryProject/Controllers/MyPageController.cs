@@ -13,10 +13,12 @@ namespace MvcLibraryProject.Controllers
     public class MyPageController : Controller
     {
         IMemberService memberService;
+        IBookRecordService bookRecordService;
 
-        public MyPageController(IMemberService memberService)
+        public MyPageController(IMemberService memberService, IBookRecordService bookRecordService)
         {
             this.memberService = memberService;
+            this.bookRecordService = bookRecordService;
         }
 
         // GET: MyPage
@@ -38,6 +40,13 @@ namespace MvcLibraryProject.Controllers
             var value = memberService.GetByMail(user);
             memberService.UpdateDto(member, member.Password, user);
             return RedirectToAction("Index");
+        }
+        public ActionResult MyBooks()
+        {
+            var mail = (string)Session["Mail"];
+            var user = memberService.GetByMail(mail);
+            var value = bookRecordService.GetDetail(user.Id);
+            return View(value);
         }
     }
 }

@@ -59,6 +59,7 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\ILateFeeDal.cs" />
     <Compile Include="Abstract\IMemberDal.cs" />
+    <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IStaffDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Concrete\EfContactDal.cs" />
     <Compile Include="Concrete\EfLateFeeDal.cs" />
     <Compile Include="Concrete\EfMemberDal.cs" />
+    <Compile Include="Concrete\EfMessageDal.cs" />
     <Compile Include="Concrete\EfStaffDal.cs" />
     <Compile Include="Concrete\EfWriterDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

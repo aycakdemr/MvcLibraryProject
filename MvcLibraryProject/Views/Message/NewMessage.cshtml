@@ -1,0 +1,27 @@
+﻿@model Entities.Concrete.Message
+@{
+    ViewBag.Title = "NewMessage";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+<br />
+<form class="form-group" method="post">
+    <div style="margin-top:15px">
+        <label>Alıcı Mail</label>
+        @Html.TextBoxFor(x => x.Receiver, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:15px">
+        <label>Konu</label>
+        @Html.TextBoxFor(x => x.Topic, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:15px">
+        <label>Mesaj</label>
+        @Html.TextAreaFor(x => x.Detail, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="btn1">Gönder</button>
+
+    </div>
+</form>

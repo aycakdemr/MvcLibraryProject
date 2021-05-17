@@ -1,0 +1,26 @@
+﻿@using Entities.Dto
+@model List<BookRecordDto>
+@{
+    ViewBag.Title = "MyBooks";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<br />
+<h2>Kitap Geçmişim</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Kitap Adı</th>
+        <th>Alış Tarihi</th>
+        <th>İade Tarihi</th>
+    </tr>
+    @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.BookName</td>
+                <td>@item.BuyingDate</td>
+                <td>@item.GivingDate</td>
+                <td></td>
+            </tr>
+        }
+</table>

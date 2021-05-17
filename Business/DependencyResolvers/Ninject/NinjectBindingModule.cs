@@ -38,6 +38,8 @@ namespace Business.DependencyResolvers.Ninject
             Kernel.Bind<ILateFeeService>().To<LateFeeManager>().InSingletonScope();
             Kernel.Bind<ILateFeeDal>().To<EfLateFeeDal>().InSingletonScope();
             Kernel.Bind<IAuthService>().To<AuthManager>().InSingletonScope();
+            Kernel.Bind<IMessageService>().To<MessageManager>().InSingletonScope();
+            Kernel.Bind<IMessageDal>().To<EfMessageDal>().InSingletonScope();
 
         }
     }

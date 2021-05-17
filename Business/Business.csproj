@@ -127,6 +127,7 @@
     <Compile Include="Abstract\IContactService.cs" />
     <Compile Include="Abstract\ILateFeeService.cs" />
     <Compile Include="Abstract\IMemberService.cs" />
+    <Compile Include="Abstract\IMessageService.cs" />
     <Compile Include="Abstract\IStaffService.cs" />
     <Compile Include="Abstract\IWriterService.cs" />
     <Compile Include="Concrete\AboutManager.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="Concrete\ContactManager.cs" />
     <Compile Include="Concrete\LateFeeManager.cs" />
     <Compile Include="Concrete\MemberManager.cs" />
+    <Compile Include="Concrete\MessageManager.cs" />
     <Compile Include="Concrete\StaffManager.cs" />
     <Compile Include="Concrete\WriterManager.cs" />
     <Compile Include="DependencyResolvers\Autofac\AutofacBusinessModule.cs" />

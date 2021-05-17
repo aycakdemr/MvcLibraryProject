@@ -42,7 +42,10 @@ namespace Business.Concrete
         {
             return _bookRecordDal.Get(x => x.Id == id);
         }
-
+        public List<BookRecordDto> GetDetail(int id)
+        {
+            return _bookRecordDal.GetBookRecordsDetails(x => x.Id == id);
+        }
         public BookRecordDto GetDetailById(int id)
         {
             return _bookRecordDal.GetBookRecordsDetailsById(x=>x.Id ==id);
