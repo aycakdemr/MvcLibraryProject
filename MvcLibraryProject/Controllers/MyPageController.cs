@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Security.Hashing;
 using Entities.Concrete;
 using Entities.Dto;
 using System;
@@ -29,11 +30,14 @@ namespace MvcLibraryProject.Controllers
             return View(value);
         }
         [HttpPost]
-        public ActionResult Index2(Member member)
+        public ActionResult Index2(MemberForRegisterDto member)
         {
+
             var user = (string)Session["Mail"];
-            
-            return View();
+            var userpassword = (string)Session["Password"];
+            var value = memberService.GetByMail(user);
+            memberService.UpdateDto(member, member.Password, user);
+            return RedirectToAction("Index");
         }
     }
 }

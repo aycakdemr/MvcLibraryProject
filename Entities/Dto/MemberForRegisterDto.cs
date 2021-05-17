@@ -16,6 +16,7 @@ namespace Entities.Dto
         public string LastName { get; set; }
         public string UserName { get; set; }
         public string Education { get; set; }
+        public string PhoneNumber { get; set; }
         public string Image { get; set; }
     }
 }

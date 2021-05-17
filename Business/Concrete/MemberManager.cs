@@ -62,10 +62,28 @@ namespace Business.Concrete
         }
  
 
+        public void UpdateDto(MemberForRegisterDto memberForRegisterDto,string password,string mail)
+        {
+            var value = GetByMail(mail);
+            byte[] passwordHash, passwordSalt;
+            HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
+            value.PasswordHash = passwordHash;
+            value.PasswordSalt = passwordSalt;
+            value.EMail = mail;
+            value.Name = memberForRegisterDto.FirstName;
+            value.LastName = memberForRegisterDto.LastName;
+            value.Education = memberForRegisterDto.Education;
+            value.UserName = memberForRegisterDto.UserName;
+            value.PhoneNumber = memberForRegisterDto.PhoneNumber;
+            value.Image = memberForRegisterDto.Image;
+            _memberDal.Update(value);
+        }
+
         public void Update(Member member)
         {
             _memberDal.Update(member);
         }
-        
+
+
     }
 }

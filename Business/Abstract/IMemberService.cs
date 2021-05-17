@@ -14,6 +14,7 @@ namespace Business.Abstract
         IResult Add(Member member);
         IResult Delete(int id);
         void Update(Member member);
+        void UpdateDto(MemberForRegisterDto memberForRegisterDto, string password, string mail);
         List<Member> GetAll();
         Member GetById(int id);
         Member GetByMail(string mail);

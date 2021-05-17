@@ -3,7 +3,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MyLayout.cshtml";
 }
-
+<br />
 <h2>Kütüphane Üye Profil Bilgileri</h2>
 @using (Html.BeginForm("Index2", "MyPage", FormMethod.Post))
 {
@@ -33,7 +33,10 @@
         <td>@Html.TextBoxFor(x => x.Education, new { @class = "form-control" })</td>
     </tr>
     <tr>
-        <td><button class="btn btn-warning">Şifre Güncelle</button></td>
+        <td>@Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td><button class="btn btn-warning">Güncelle</button></td>
     </tr>
 </table>
 }
