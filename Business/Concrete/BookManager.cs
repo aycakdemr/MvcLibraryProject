@@ -54,9 +54,19 @@ namespace Business.Concrete
             return _bookDal.GetAll(x => x.Status == false);
         }
 
+        public List<Book> GetByStatusTrue()
+        {
+            return _bookDal.GetAll(x => x.Status == true);
+        }
+
         public List<BookWriterCategoryDto> GetDetails()
         {
             return _bookDal.GetBookDetails();
+        }
+
+        public List<Book> GetWritersBook(int id)
+        {
+            return _bookDal.GetAll(x => x.WriterId == id);
         }
 
         public List<BookWriterCategoryDto> SearchBook(string a)

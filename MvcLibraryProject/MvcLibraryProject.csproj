@@ -508,6 +508,8 @@
     <Content Include="Views\Message\NewMessage.cshtml" />
     <Content Include="Views\Message\AllMessages.cshtml" />
     <Content Include="Views\MyPage\MyBooks.cshtml" />
+    <Content Include="Views\Writer\WritersBooks.cshtml" />
+    <Content Include="Views\Member\MembersBooks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -46,6 +46,11 @@ namespace Business.Concrete
             return _categoryDal.Get(x=>x.Id ==id);
         }
 
+        public List<Category> GetStatusTrue()
+        {
+            return _categoryDal.GetAll(x=>x.Status ==true);
+        }
+
         public void Update(Category category)
         {
             _categoryDal.Update(category);

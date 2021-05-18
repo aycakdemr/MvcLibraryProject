@@ -19,5 +19,6 @@ namespace Business.Abstract
         List<BookRecordDto> GetDetailStatusFalse();
         List<BookRecordDto> GetDetailStatusTrue();
         List<BookRecordDto> GetDetail(int id);
+        List<BookRecordDto> GetMembersBook(int id);
     }
 }

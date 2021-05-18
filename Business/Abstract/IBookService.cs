@@ -20,8 +20,11 @@ namespace Business.Abstract
         List<BookWriterCategoryDto> SearchBook(string a);
 
         List<Book> GetByStatusFalse();
+        List<Book> GetByStatusTrue();
 
         String BestPublishing();
-        
+
+        List<Book> GetWritersBook(int id);
+       
     }
 }

@@ -10,15 +10,19 @@
     <form class="form-group" method="post">
         <div style="margin-top:15px">
             <label>Üye Id</label>
-            @Html.TextBoxFor(x => x.MemberId, new { @class = "form-control" })
+            @*@Html.TextBoxFor(x => x.MemberId, new { @class = "form-control" })*@
+            @Html.DropDownListFor(k => k.MemberId, (List<SelectListItem>)ViewBag.dgr1, 
+           new { @class ="form-control"})
         </div>
         <div style="margin-top:15px">
             <label>Kitap Id</label>
-            @Html.TextBoxFor(x => x.BookId, new { @class = "form-control" })
+            @Html.DropDownListFor(k => k.BookId, (List<SelectListItem>)ViewBag.dgr2,
+           new { @class = "form-control" })
         </div>
         <div style="margin-top:15px">
             <label>Personel ID </label>
-            @Html.TextBoxFor(x => x.StaffId, new { @class = "form-control" })
+            @Html.DropDownListFor(k => k.StaffId, (List<SelectListItem>)ViewBag.dgr3,
+           new { @class = "form-control" })
         </div>
         <div style="margin-top:15px">
             <label>Kitap Alış Tarihi </label>

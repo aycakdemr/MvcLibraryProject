@@ -62,6 +62,11 @@ namespace Business.Concrete
             return _bookRecordDal.GetBookRecordsDetails(x => x.RecordStatus == true);
         }
 
+        public List<BookRecordDto> GetMembersBook(int id)
+        {
+            return _bookRecordDal.GetBookRecordsDetails(x => x.MemberId == id);
+        }
+
         public void Update(BookRecord bookRecord)
         {
             bookRecord.RecordStatus = true;

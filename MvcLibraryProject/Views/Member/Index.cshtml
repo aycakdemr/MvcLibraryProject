@@ -8,20 +8,17 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2><mark>Üyeler</mark> </h2>
 
 <table class="table table-bordered">
     <tr>
         <th>Id</th>
         <th>Üye Adı</th>
         <th>Üye Soyadı</th>
-        <th>Mail</th>
-        <th>Kullanıcı Adı</th>
-        <th>Şifre</th>
-        <th>Telefon</th>
         <th>Okul</th>
         <th>Sil</th>
         <th>Güncelle</th>
+        <th>Üye Kitap Geçmişi</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -29,13 +26,10 @@
             <td>@item.Id</td>
             <td>@item.Name</td>
             <td>@item.LastName</td>
-            <td>@item.EMail</td>
-            <td>@item.UserName</td>
-            <td>@item.Password</td>
-            <td>@item.PhoneNumber</td>
             <td>@item.Education</td>
             <td><a href="/Member/DeleteMember/@item.Id" class="btn btn-danger">Sil</a></td>
             <td><a href="/Member/GetMember/@item.Id" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Member/MembersBooks/@item.Id" class="btn btn-default" style="background-color:#461c70 ; color:wheat">Kitap Geçmişi</a></td>
 
         </tr>
     }

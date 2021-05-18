@@ -22,7 +22,7 @@ namespace MvcLibraryProject.Controllers
 
         public ActionResult Index()
         {
-            var value = categoryManager.GetAll();
+            var value = categoryManager.GetStatusTrue();
             return View(value);
         }
         [HttpGet]
@@ -38,7 +38,8 @@ namespace MvcLibraryProject.Controllers
         }
         public ActionResult DeleteCategory(int id)
         {
-            categoryManager.Delete(id);
+            var value = categoryManager.GetById(id);
+            value.Status = false;
             return RedirectToAction("Index");
         }
         public ActionResult GetCategory(int id)

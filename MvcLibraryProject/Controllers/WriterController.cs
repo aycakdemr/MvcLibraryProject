@@ -13,10 +13,11 @@ namespace MvcLibraryProject.Controllers
     public class WriterController : Controller
     {
         IWriterService writerManager;
-
-        public WriterController(IWriterService writerManager)
+        IBookService bookManager;
+        public WriterController(IWriterService writerManager, IBookService bookManager)
         {
             this.writerManager = writerManager;
+            this.bookManager = bookManager;
         }
 
         // GET: Writers
@@ -51,5 +52,15 @@ namespace MvcLibraryProject.Controllers
             writerManager.Update(writer);
             return RedirectToAction("Index");
         }
+        public ActionResult WritersBooks(int id)
+        {
+            var writer = bookManager.GetWritersBook(id);
+            var writername = writerManager.GetById(id).WriterName;
+            var writerlastname = writerManager.GetById(id).WriterLastName;
+            ViewBag.dgr1 = writername;
+            ViewBag.dgr2 = writerlastname;
+            return View(writer);
+        }
+        
     }
 }

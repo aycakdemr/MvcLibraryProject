@@ -16,5 +16,6 @@ namespace Business.Abstract
         List<Category> GetAll();
         Category GetById(int id);
         Category Get(int id);
+        List<Category> GetStatusTrue();
     }
 }

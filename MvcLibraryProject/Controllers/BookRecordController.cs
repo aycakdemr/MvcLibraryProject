@@ -30,14 +30,41 @@ namespace MvcLibraryProject.Controllers
         }
         [HttpGet]
         public ActionResult Lend()  //ödünç verme
-        { 
+        {
+            List<SelectListItem> deger1 = (from i in _memberService.GetAll()
+                                           select new SelectListItem
+                                           {
+                                               Text = i.Name +" "+i.LastName,
+                                               Value = i.Id.ToString()
+                                           }).ToList();
+            ViewBag.dgr1 = deger1;
+            List<SelectListItem> deger2 = (from i in _bookService.GetByStatusTrue()
+                                           select new SelectListItem
+                                           {
+                                               Text = i.Name,
+                                               Value = i.Id.ToString()
+                                           }).ToList();
+            ViewBag.dgr2 = deger2;
+            List<SelectListItem> deger3 = (from i in _staffService.GetAll()
+                                           select new SelectListItem
+                                           {
+                                               Text = i.StaffName,
+                                               Value = i.Id.ToString()
+                                           }).ToList();
+            ViewBag.dgr3 = deger3;
             return View();
         }
         [HttpPost]
         public ActionResult Lend(BookRecord bookRecord)
         {
+            var d1 = _memberService.GetById(bookRecord.MemberId);
+            var d2 = _bookService.GetById(bookRecord.BookId);
+            var d3 = _staffService.GetById(bookRecord.StaffId);
+            bookRecord.MemberId = d1.Id;
+            bookRecord.BookId = d2.Id;
+            bookRecord.StaffId = d3.Id;
             _bookRecordService.Add(bookRecord);
-            return View();
+            return RedirectToAction("Index");
         }
         [HttpGet]
         public ActionResult AddBookRecord()

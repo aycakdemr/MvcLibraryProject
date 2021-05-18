@@ -13,10 +13,11 @@ namespace MvcLibraryProject.Controllers
     public class MemberController : Controller
     {
         IMemberService _memberManager;
-
-        public MemberController(IMemberService memberManager)
+        IBookRecordService _bookRecordManager;
+        public MemberController(IMemberService memberManager, IBookRecordService bookRecordManager)
         {
             _memberManager = memberManager;
+            _bookRecordManager = bookRecordManager;
         }
 
         // GET: Member
@@ -55,5 +56,16 @@ namespace MvcLibraryProject.Controllers
             _memberManager.Update(member);
             return RedirectToAction("Index");
         }
+        public ActionResult MembersBooks(int id)
+        {
+
+            var value = _bookRecordManager.GetMembersBook(id);
+            var membername = _memberManager.GetById(id).Name;
+            var memberlastname = _memberManager.GetById(id).LastName;
+            ViewBag.dgr1 = membername;
+            ViewBag.dgr2 = memberlastname;
+            return View(value);
+        }
+        
     }
 }
