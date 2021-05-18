@@ -11,6 +11,7 @@ using System.Web.Security;
 
 namespace MvcLibraryProject.Controllers
 {
+    [Authorize]
     public class MyPageController : Controller
     {
         IMemberService memberService;
@@ -27,7 +28,7 @@ namespace MvcLibraryProject.Controllers
 
         // GET: MyPage
         [HttpGet]
-        [Authorize]
+       
         public ActionResult Index()
         {
             var usermail = (string)Session["Mail"];
