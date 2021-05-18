@@ -21,5 +21,6 @@ namespace DataAccess.Concrete
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Writer> Writer { get; set; }
+        public DbSet<Announcement> Announcements { get; set; }
     }
 }

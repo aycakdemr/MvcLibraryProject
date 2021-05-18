@@ -1,0 +1,26 @@
+﻿@using Entities.Concrete
+@model List<Announcement>
+@{
+    ViewBag.Title = "Announcements";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Duyurular</h2>
+
+<table class="table table-bordered table-striped">
+    <tr style="background-color:#ffd800">
+        <th>Kategori</th>
+        <th>Tarih</th>
+        <th>İçerik</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CategoryName</td>
+            <td>@Convert.ToDateTime(@item.DateTime).ToString("dd/MM/yyyy")</td>
+            <td>@item.Detail</td>
+        </tr>
+    }
+
+</table>
+

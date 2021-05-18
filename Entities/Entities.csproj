@@ -45,6 +45,7 @@
     <Compile Include="Abstract\IDto.cs" />
     <Compile Include="Abstract\IEntity.cs" />
     <Compile Include="Concrete\About.cs" />
+    <Compile Include="Concrete\Announcement.cs" />
     <Compile Include="Concrete\Basket.cs" />
     <Compile Include="Concrete\Book.cs" />
     <Compile Include="Concrete\BookRecord.cs" />

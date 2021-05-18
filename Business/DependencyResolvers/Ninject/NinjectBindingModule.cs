@@ -40,6 +40,8 @@ namespace Business.DependencyResolvers.Ninject
             Kernel.Bind<IAuthService>().To<AuthManager>().InSingletonScope();
             Kernel.Bind<IMessageService>().To<MessageManager>().InSingletonScope();
             Kernel.Bind<IMessageDal>().To<EfMessageDal>().InSingletonScope();
+            Kernel.Bind<IAnnouncementDal>().To<EfAnnouncementDal>().InSingletonScope();
+            Kernel.Bind<IAnnouncementService>().To<AnnouncementManager>().InSingletonScope();
 
         }
     }

@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
+    <Compile Include="Abstract\IAnnouncementDal.cs" />
     <Compile Include="Abstract\IBasketDal.cs" />
     <Compile Include="Abstract\IBookDal.cs" />
     <Compile Include="Abstract\IBookRecordDal.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\EfAboutDal.cs" />
+    <Compile Include="Concrete\EfAnnouncementDal.cs" />
     <Compile Include="Concrete\EfBasketDal.cs" />
     <Compile Include="Concrete\EfBookDal.cs" />
     <Compile Include="Concrete\EfBookRecordDal.cs" />

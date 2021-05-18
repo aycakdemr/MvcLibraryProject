@@ -164,6 +164,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AnnouncementController.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\BookRecordController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
@@ -510,6 +511,10 @@
     <Content Include="Views\MyPage\MyBooks.cshtml" />
     <Content Include="Views\Writer\WritersBooks.cshtml" />
     <Content Include="Views\Member\MembersBooks.cshtml" />
+    <Content Include="Views\Announcement\Index.cshtml" />
+    <Content Include="Views\Announcement\NewAnnouncement.cshtml" />
+    <Content Include="Views\Announcement\AnnouncementDetail.cshtml" />
+    <Content Include="Views\MyPage\Announcements.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

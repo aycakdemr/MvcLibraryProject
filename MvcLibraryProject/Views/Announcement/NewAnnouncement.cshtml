@@ -1,0 +1,29 @@
+﻿@model Entities.Concrete.Announcement
+@{
+    ViewBag.Title = "NewAnnouncement";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>NewAnnouncement</h2>
+
+<form class="form-group" method="post">
+    <div style="margin-top:15px">
+        <label>Duyuru Kategorisi</label>
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:15px">
+        <label>Duyuru İçerik</label>
+        @Html.TextBoxFor(x => x.Detail, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:15px">
+        <label>Duyuru Tarih</label>
+        @Html.TextBoxFor(x => x.DateTime, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="btn1"> Duyuru Ekle</button>
+
+    </div>
+</form>

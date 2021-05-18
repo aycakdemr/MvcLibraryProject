@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace MvcLibraryProject.Controllers
 {
@@ -14,11 +15,14 @@ namespace MvcLibraryProject.Controllers
     {
         IMemberService memberService;
         IBookRecordService bookRecordService;
+        IAnnouncementService announcementService;
 
-        public MyPageController(IMemberService memberService, IBookRecordService bookRecordService)
+        public MyPageController(IMemberService memberService, IBookRecordService bookRecordService
+            , IAnnouncementService announcementService)
         {
             this.memberService = memberService;
             this.bookRecordService = bookRecordService;
+            this.announcementService = announcementService;
         }
 
         // GET: MyPage
@@ -47,6 +51,16 @@ namespace MvcLibraryProject.Controllers
             var user = memberService.GetByMail(mail);
             var value = bookRecordService.GetDetail(user.Id);
             return View(value);
+        }
+        public ActionResult Announcements()
+        {
+            var Announcement = announcementService.GetAll();
+            return View(Announcement);
+        }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login","Login");
         }
     }
 }

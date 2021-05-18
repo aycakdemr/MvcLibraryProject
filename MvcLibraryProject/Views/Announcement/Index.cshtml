@@ -1,0 +1,48 @@
+﻿@using Entities.Concrete
+@model List<Announcement>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    string renk = " ";
+}
+
+<h2>Duyurular</h2>
+
+<table class="table table-bordered table-striped">
+    <tr style="background-color:#ffd800">
+        <th>Duyuru no</th>
+        <th>Kategori</th>
+        <th>Tarih</th>
+        <th>Sil</th>
+        <th>İçerik</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        if(item.CategoryName == "Diger")
+        {
+            renk = "bg-info text-white";
+        }
+        if (item.CategoryName == "Yeni Kitap")
+        {
+            renk = "bg-warning text-white";
+        }
+        if (item.CategoryName == "Iletisim")
+        {
+            renk = "bg-success text-white";
+        }
+        if (item.CategoryName == "Kitaplari Geciktirmeyin")
+        {
+            renk = "bg-danger text-white";
+        }
+        <tr class="@renk">
+            <td>@item.Id</td>
+            <td >@item.CategoryName</td>
+            <td>@Convert.ToDateTime(@item.DateTime).ToString("dd/MM/yyyy")</td>
+            <td><a href="/Announcement/DeleteAnnouncement/@item.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Announcement/AnnouncementDetail/@item.Id" class="btn btn-success" style="background-color:#6e146f ;color:wheat">Detaylar</a></td>
+
+        </tr>
+    }
+
+</table>
+<a href="/Announcement/NewAnnouncement/" class="btn btn-primary">Yeni Duyuru Ekle</a>

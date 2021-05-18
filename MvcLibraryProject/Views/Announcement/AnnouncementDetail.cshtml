@@ -1,0 +1,29 @@
+﻿@model Entities.Concrete.Announcement
+@{
+    ViewBag.Title = "AnnouncementDetail";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Duyuru Güncelle</h2>
+
+@using (Html.BeginForm("UpdateAnnouncement", "Announcement", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Id)
+        @Html.TextBoxFor(c => c.Id, new { @class = "form-control" })
+        <br />
+        <label>Duyuru Kategori</label>
+        @Html.TextBoxFor(c => c.CategoryName, new { @class = "form-control" })
+        <br />
+        <label>Duyuru İçerik</label>
+        @Html.TextAreaFor(c => c.Detail, new { @class = "form-control" })
+        <br />
+        <label>Duyuru Tarih</label>
+        @Html.TextBoxFor(c => c.DateTime, new { @class = "form-control" })
+        <br />
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
