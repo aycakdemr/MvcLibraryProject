@@ -36,13 +36,17 @@ namespace MvcLibraryProject.Controllers
             message.Sender = mail.ToString();
             message.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
             messageService.Add(message);
-            return RedirectToAction("AllMessages", "Messages");
+            return RedirectToAction("AllMessages", "Message");
         }
         public ActionResult AllMessages()
         {
             var mail = (string)Session["Mail"].ToString();
             var value = messageService.GetByMailSender(mail.ToString());
             return View(value);
+        }
+        public PartialViewResult Partial1()
+        {
+            return PartialView();
         }
     }
 }

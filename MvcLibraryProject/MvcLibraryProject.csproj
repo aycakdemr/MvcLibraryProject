@@ -2608,6 +2608,7 @@
     <Content Include="Views\MyPage\Announcements.cshtml" />
     <Content Include="Views\MyPage\Partial1.cshtml" />
     <Content Include="Views\MyPage\Partial2.cshtml" />
+    <Content Include="Views\Message\Partial1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
