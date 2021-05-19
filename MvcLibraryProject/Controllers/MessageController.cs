@@ -46,6 +46,11 @@ namespace MvcLibraryProject.Controllers
         }
         public PartialViewResult Partial1()
         {
+            var mail = (string)Session["Mail"].ToString();
+            var count = messageService.GetByMailReceiver(mail).Count();
+            ViewBag.d1 = count;
+            var count2 = messageService.GetByMailSender(mail).Count();
+            ViewBag.d2 = count2;
             return PartialView();
         }
     }

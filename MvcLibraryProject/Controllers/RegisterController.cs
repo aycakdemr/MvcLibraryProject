@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MvcLibraryProject.Controllers
 {
+    [AllowAnonymous]
     public class RegisterController : Controller
     {
         // GET: Register

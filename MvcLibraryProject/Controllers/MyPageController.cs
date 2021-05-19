@@ -72,7 +72,7 @@ namespace MvcLibraryProject.Controllers
         {
             var mail = (string)Session["Mail"];
             var user = memberService.GetByMail(mail);
-            var value = bookRecordService.GetDetail(user.Id);
+            var value = bookRecordService.GetMembersBook(user.Id);
             return View(value);
         }
         public ActionResult Announcements()
