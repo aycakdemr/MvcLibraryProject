@@ -94,11 +94,11 @@
         <a href="/Member/Index/"><i class="glyphicon glyphicon-user"></i> &nbsp; Üyeler</a>
 
         <a href="/Staff/Index/"><i class="glyphicon glyphicon-tower"></i> &nbsp; Personeller</a>
-
+        @if (User.IsInRole("admin")) {
         <a href="/BookRecord/Lend/"><i class="glyphicon glyphicon-circle-arrow-right"></i> &nbsp; Ödünç Kitap Ver</a>
 
         <a href="/BookRecord/Index/"><i class="glyphicon glyphicon-circle-arrow-left"></i> &nbsp; Ödünç Kitap Al</a>
-
+        }
         <a href="/Statistics/Index/"><i class="glyphicon glyphicon-sort"></i> &nbsp; İstatistikler</a>
 
         <a href="/Announcement/Index/"><i class="glyphicon glyphicon-earphone"></i> &nbsp; Duyurular</a>
@@ -115,11 +115,11 @@
 
         <a href="/MainPage/Index/"><i class="glyphicon glyphicon-gift"></i> &nbsp; Vitrin</a>
 
-        <a href="#"><i class="glyphicon glyphicon-cog"></i> &nbsp; Ayarlar</a>
+        <a href="/Graphic/Index/"><i class="glyphicon glyphicon-console"></i> &nbsp; Grafikler</a>
 
-        <a href="#"><i class="glyphicon glyphicon-phone"></i> &nbsp; Yardım</a>
+        <a href="#"><i class="glyphicon glyphicon-phone"></i> &nbsp; Ayarlar</a>
 
-        <a href="#"><i class="glyphicon glyphicon-remove-sign"></i> &nbsp; Çıkış</a>
+        <a href="/MyPage/Logout/"><i class="glyphicon glyphicon-remove-sign"></i> &nbsp; Çıkış</a>
 
     </div>
 

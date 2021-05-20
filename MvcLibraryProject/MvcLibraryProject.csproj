@@ -166,10 +166,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminLoginController.cs" />
     <Compile Include="Controllers\AnnouncementController.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\BookRecordController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\GraphicController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MainPageController.cs" />
@@ -177,6 +180,7 @@
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\MyPageController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\SettingController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\TransactionController.cs" />
@@ -185,6 +189,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\AdminRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminLTE-3.0.4\.gitignore" />
@@ -2032,6 +2037,14 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="weberror\css\font-awesome.min.css" />
+    <Content Include="weberror\css\popuo-box.css" />
+    <Content Include="weberror\css\style.css" />
+    <Content Include="weberror\images\b8.jpg" />
+    <Content Include="weberror\index.html" />
+    <Content Include="weberror\js\jquery-2.2.3.min.js" />
+    <Content Include="weberror\js\jquery.magnific-popup.js" />
+    <Content Include="weberror\w3layouts-License.txt" />
     <Content Include="webpanel\assets\favicon.ico" />
     <Content Include="webpanel\css\styles.css" />
     <Content Include="webpanel\index.html" />
@@ -2609,10 +2622,21 @@
     <Content Include="Views\MyPage\Partial1.cshtml" />
     <Content Include="Views\MyPage\Partial2.cshtml" />
     <Content Include="Views\Message\Partial1.cshtml" />
+    <Content Include="Views\AdminLogin\Login.cshtml" />
+    <Content Include="Views\Graphic\Index.cshtml" />
+    <Content Include="Views\Error\Page404.cshtml" />
+    <Content Include="weberror\fonts\fontawesome-webfont.eot" />
+    <Content Include="weberror\fonts\fontawesome-webfont.ttf" />
+    <Content Include="weberror\fonts\fontawesome-webfont.woff" />
+    <Content Include="weberror\fonts\fontawesome-webfont.woff2" />
+    <Content Include="weberror\fonts\FontAwesome.otf" />
+    <Content Include="Views\Setting\Index.cshtml" />
+    <Content Include="Views\Setting\GetAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Settings\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

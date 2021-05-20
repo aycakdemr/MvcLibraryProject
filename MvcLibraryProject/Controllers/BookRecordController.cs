@@ -23,6 +23,7 @@ namespace MvcLibraryProject.Controllers
         }
 
         // GET: BookRecord
+        [Authorize(Roles ="admin")]
         public ActionResult Index()
         {
             var value = _bookRecordService.GetDetailStatusFalse();

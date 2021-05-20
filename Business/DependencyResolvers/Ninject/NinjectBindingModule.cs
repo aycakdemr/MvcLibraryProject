@@ -42,7 +42,8 @@ namespace Business.DependencyResolvers.Ninject
             Kernel.Bind<IMessageDal>().To<EfMessageDal>().InSingletonScope();
             Kernel.Bind<IAnnouncementDal>().To<EfAnnouncementDal>().InSingletonScope();
             Kernel.Bind<IAnnouncementService>().To<AnnouncementManager>().InSingletonScope();
-
+            Kernel.Bind<IAdminService>().To<AdminManager>().InSingletonScope();
+            Kernel.Bind<IAdminDal>().To<EfAdminDal>().InSingletonScope();
         }
     }
 }

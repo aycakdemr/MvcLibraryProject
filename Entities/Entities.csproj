@@ -45,6 +45,7 @@
     <Compile Include="Abstract\IDto.cs" />
     <Compile Include="Abstract\IEntity.cs" />
     <Compile Include="Concrete\About.cs" />
+    <Compile Include="Concrete\Admin.cs" />
     <Compile Include="Concrete\Announcement.cs" />
     <Compile Include="Concrete\Basket.cs" />
     <Compile Include="Concrete\Book.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Concrete\Writer.cs" />
     <Compile Include="Dto\BookRecordDto.cs" />
     <Compile Include="Dto\BookWriterCategoryDto.cs" />
+    <Compile Include="Dto\Graphic.cs" />
     <Compile Include="Dto\MainPageDto.cs" />
     <Compile Include="Dto\MemberForLoginDto.cs" />
     <Compile Include="Dto\MemberForRegisterDto.cs" />
